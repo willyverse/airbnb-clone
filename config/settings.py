@@ -16,6 +16,7 @@ from django.core.exceptions import ImproperlyConfigured
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 secret_file = os.path.join(BASE_DIR, "secrets.json")  # secrets.json file location
 
 with open(secret_file) as f:
@@ -149,3 +150,7 @@ USE_TZ = True
 STATIC_URL = "/static/"
 
 AUTH_USER_MODEL = "users.User"
+
+MEDIA_ROOT = os.path.join(BASE_DIR, "uploads")
+
+MEDIA_URL = "/media/"  # absolute path "/~/", relative path "~/"
